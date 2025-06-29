@@ -1,0 +1,14 @@
+[Unit]
+Description=TRMNL Journal Prompts Webhook Server
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/trmnl-journal
+ExecStart=/usr/bin/python3 /home/pi/trmnl-journal/trmnl_webhook_server.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
